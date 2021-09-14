@@ -1,0 +1,17 @@
+:root {
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #DCDBDB;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: hsla(240, 7%, 40%, 0.473);
+        border-radius: 10px;
+    }
+
+
+}
