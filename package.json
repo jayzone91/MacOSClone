@@ -4,8 +4,8 @@
   "description": "A MacOS Clone written in Nunjucks, SassyCSS and Vanilla JS\r Build with 11ty",
   "main": ".eleventy.js",
   "scripts": {
-  "watch:sass": "sass --watch _src/sass:_site/css",
-  "build:sass": "sass _src/sass:_site/css",
+  "watch:sass": "sass --watch src/sass:public/css",
+  "build:sass": "sass src/sass:public/css",
   "watch:eleventy": "eleventy --serve",
   "build:eleventy": "eleventy",
   "start": "npm-run-all build:sass --parallel watch:*",
