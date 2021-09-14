@@ -1,33 +1,30 @@
 {
-  "name": "MacOS-Clone",
+  "name": "macosclone",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A MacOS Clone written in Nunjucks, SassyCSS and Vanilla JS\r Build with 11ty",
+  "main": ".eleventy.js",
   "scripts": {
-    "start": "npm-run-all sass --parallel watch:*",
-    "serve": "eleventy --serve",
-    "sass": "node-sass -o public/assets/css --output-style compact src/assets/css",
-    "watch:eleventy": "eleventy --serve",
-    "watch:sass": "npm run sass -- --watch",
-    "build": "eleventy"
+  "watch:sass": "sass --watch _src/sass:_site/css",
+  "build:sass": "sass _src/sass:_site/css",
+  "watch:eleventy": "eleventy --serve",
+  "build:eleventy": "eleventy",
+  "start": "npm-run-all build:sass --parallel watch:*",
+  "build": "npm-run-all build:*"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/computerextra/jays-site.git"
+    "url": "git+https://github.com/jayzone91/MacOSClone.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/computerextra/jays-site/issues"
+    "url": "https://github.com/jayzone91/MacOSClone/issues"
   },
-  "homepage": "https://github.com/computerextra/jays-site#readme",
+  "homepage": "https://github.com/jayzone91/MacOSClone#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "npm-run-all": "^4.1.5"
-  },
-  "dependencies": {
-    "eleventy-plugin-sass": "^1.2.0",
-    "shariff": "^3.2.1"
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.40.0"
   }
 }
