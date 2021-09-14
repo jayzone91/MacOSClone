@@ -1,13 +1,17 @@
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
 
-    eleventyConfig.addPassthroughCopy("./src/js");
-    eleventyConfig.addPassthroughCopy("./src/assets");
-
-    // Return your Object options:
+    eleventyConfig.addPassthroughCopy('./src/assets/images')
+    eleventyConfig.addPassthroughCopy('./src/assets/fonts')
+    eleventyConfig.addPassthroughCopy('./src/assets/js')
+    eleventyConfig.addWatchTarget('public/assets/css/*.css')
+    eleventyConfig.setBrowserSyncConfig({
+        files: ['puclic/assets/css/*.css']
+    })
+    
     return {
         dir: {
             input: "src",
-            output: "dist"
+            output: "public"
         }
-    }
-};
+    };
+}
