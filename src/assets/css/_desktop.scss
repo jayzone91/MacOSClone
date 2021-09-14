@@ -1,0 +1,309 @@
+.desktop {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    .spacer {
+        display: flex;
+        width: 1%;
+    }
+
+    .obere-leiste {
+        display: flex;
+        width: 100%;
+        height: 3vh;
+        background-color: $leisten;
+
+        .apple-logo {
+            display: flex;
+            align-self: center;
+            width: auto;
+            height: 2.5vh;
+            padding-right: 1em;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .left-menu {
+            display: flex;
+            width: 10%;
+            align-items: center;
+            color: $text;
+            justify-content: space-between;
+
+            span {
+                font-size: 0.8em;
+                border-bottom: 1px solid transparent;
+                padding-left: 1em;
+
+                &:hover {
+                    cursor: pointer;
+                    font-size: 0.9em;
+                    border-bottom: 1px solid gray;
+                }
+            }
+
+        }
+
+        .long-spacer {
+            display: flex;
+            width: 70%;
+        }
+
+        .right-menu {
+            display: flex;
+            width: 20%;
+            align-items: center;
+            color: $text;
+
+            .items {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                width: 50%;
+                height: 3vh;
+
+                .spacer-items {
+                    width: 10%;
+                }
+
+                .wlan,
+                .search {
+                    width: auto;
+                    height: 3vh;
+                }
+
+                .wlan {
+                    height: 1.5vh;
+                }
+
+                .search {
+                    height: 1.5vh;
+                }
+            }
+
+            .datetime {
+                width: 50%;
+                height: 3vh;
+                display: flex;
+                align-items: center;
+
+                .spacer-date {
+                    width: 5%;
+                }
+
+                .date {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    width: 60%;
+                    height: 3vh;
+                }
+
+                .time {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 40%;
+                    height: 3vh;
+                }
+
+                .date,
+                .time {
+                    span {
+                        font-size: 0.8em;
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        display: flex;
+        width: 100%;
+        height: 89vh;
+    }
+
+    .untere-leiste {
+        display: flex;
+        flex-shrink: 1;
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+        width: max-content;
+        width: intrinsic;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        height: 8.2vh;
+        background-color: $leisten;
+        border-radius: 1.5em;
+
+        .items {
+            display: flex;
+            flex-shrink: 1;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+
+            .spacer{
+                width: .8em;
+            }
+
+            img {
+                width: auto;
+                height: 7vh;
+                align-items: center;
+                z-index: 1;
+                border-radius: 25%;
+
+                &:hover {
+                    height: 7.5vh;
+                    cursor: pointer;
+                }
+            }
+
+            .item {
+                background-color: $text;
+                border-radius: 25%;
+            }
+        }
+    }
+    .spacer-dock{
+        height: .5em;
+    }
+    .contact-form {
+        display: flex;
+        justify-content: center;
+        align-items: top;
+        padding-top: 1em;
+        min-height: 50vh;
+        .feedback-input{
+            color: $dark-text;
+            font-weight: 500;
+            font-size: 1.2em;
+            border-radius: 0.5em;
+            line-height: 125%;
+            background-color: transparent;
+            border: 2px solid $dark-text;
+            transition: all 0.3s;
+            padding: 0.7em;
+            margin-bottom: 1em;
+            width: 100%;
+            box-sizing: border-box;
+            outline: 0;
+            &:focus {
+                border: 2px solid $dark-bg;
+            }
+        }
+        textarea {
+            height: 15em;
+            font-size: 1.5em;
+            line-height: 150%;
+            resize: vertical;
+        }
+        .submit {
+            width: 100%;
+            background-color: $dark-text;
+            color: $text;
+            border: 0;
+            border-radius: 0.5em;
+            cursor: pointer;
+            font-size: 1.7em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            transition: all 0.3s;
+            margin-top: -0.4em;
+            font-weight: 700;
+            &:hover {
+                background: $dark-bg;
+            }
+        }
+    }
+    .dropbtn{
+        cursor: pointer;
+    }
+    .dropdown-apple-menu{
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content{
+        display: none;
+        position: absolute;
+        left: -0.8em;
+        top: 3vh;
+        background-color: $background;
+        min-width: 190px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        a, #ausschalten, #neustart {
+            padding: 5px 10px;
+            border-bottom: 0.5px solid $dark-text;
+            color: $dark-text;
+            text-decoration: none;
+            display: block;
+            &:hover{
+                background-color: $highlight;
+                cursor: pointer;
+            }
+        }
+    }
+    .show{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .shutdown {
+        background-color: black;
+        color: black;
+    }
+}
+
+// Bootsscreen
+.bootscreen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    .bootlogo{
+        display: flex;
+        align-self: center;
+        justify-self: center;
+        justify-content: center;
+        height: 15vh;
+        width: max-content;
+        width: intrinsic;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        img {
+            width: auto;
+            height: 15vh;
+            align-items: center;
+            z-index: 1;
+        }
+    }
+    .boot{
+        margin-top: 1%;
+        width: 15%;
+        height: 1%;
+        background-color: $text;
+        border-radius: 15px;
+        .loadbar{
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: $dark-bg;
+            animation-name: boot;
+            animation-duration: 4s;
+            border-radius: 15px;
+        }
+        
+
+    }
+}
